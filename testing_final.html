@@ -56,25 +56,30 @@
             user-select: none;
             -webkit-user-drag: none;
         }
-
         .pointer-image {
-            width: auto;
-            height: auto;
-            max-width: 50px;
-            max-height: 50px;
-            object-fit: contain;
-            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
-            pointer-events: none;
-            user-select: none;
-            -webkit-user-drag: none;
-        }
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+    pointer-events: none;
+    user-select: none;
+}
+@media (min-width: 640px) {
+    .pointer-image {
+        width: 100px;
+        height: 100px;
+    }
+}
+#pointerWrapper {
+    top: -40px; /* for 80px pointer */
+}
 
-        @media (min-width: 640px) {
-            .pointer-image {
-                max-width: 60px;
-                max-height: 60px;
-            }
-        }
+@media (min-width: 640px) {
+    #pointerWrapper {
+        top: -50px; /* for 100px pointer */
+    }
+}
+
 
         .spin-button {
             transition: all 0.2s ease;
@@ -143,7 +148,10 @@
                 <!-- Wheel Container -->
                 <div id="wheel-container" class="relative mb-6 flex-shrink-0">
                     <!-- Pointer -->
-                    <div class="absolute -top-6 sm:-top-8 left-1/2 -translate-x-1/2 z-20">
+                    <!-- <div class="absolute -top-6 sm:-top-8 left-1/2 -translate-x-1/2 z-20"> -->
+                        <div id="pointerWrapper"
+     class="absolute left-1/2 -translate-x-1/2 z-20">
+
                         <img src="pointer.png" alt="Pointer" class="pointer-image" id="pointerImage" draggable="false">
                     </div>
 
